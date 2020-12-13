@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sgcai.mvvmproject.ui.main.viewmodel.RecommendTabViewModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="26px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.CircularImageView xmlns:binding="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:scaleType="fitXY"
+                binding:url="@{viewModel.item.userHeadPortrait}"
+                android:src="@drawable/default_image_small"
+                app:siBorderAlpha="0"
+                app:siBorderColor="#fff"
+                app:siBorderWidth="2px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:text="@{viewModel.item.userNickName}"
+                            android:textColor="#333333"
+                            android:textSize="26px"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_cardLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10px"
+                            android:src="@drawable/icon_clock_1continuous"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4px"
+                        android:text="5分钟前"
+                        android:textColor="@color/color_b4b4b4"
+                        android:textSize="22px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_square_follow_click"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="10px"
+                        android:paddingBottom="10px">
+
+                        <LinearLayout
+                            android:id="@+id/ll_square_follow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_box_25_00c49f_white"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="20px"
+                            android:paddingTop="8px"
+                            android:paddingRight="20px"
+                            android:paddingBottom="8px">
+
+
+                            <TextView
+                                android:id="@+id/tv_follow_state"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2px"
+                                android:text="关注"
+                                android:textColor="@color/color_ff3c53"
+                                android:textSize="24px" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@drawable/btn_clear_blake48"
+                        android:drawablePadding="12px"
+                        android:gravity="bottom"
+                        android:paddingLeft="10px"
+                        android:paddingTop="10px"
+                        android:paddingBottom="10px"
+                        android:textColor="@color/color_b4b4b4"
+                        android:textSize="24px"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:lineSpacingExtra="4px"
+            android:text="@{viewModel.item.dynamicContent}"
+            android:textColor="@color/color_79827f"
+            android:textSize="28px" />
+
+        <LinearLayout
+            android:id="@+id/ll_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px"
+            android:orientation="vertical">
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:id="@+id/iv_one_image"
+                android:layout_width="match_parent"
+                android:layout_height="400px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_banner"
+                android:visibility="gone"
+                binding:siBorderColor="#fff"
+                binding:siBorderWidth="2px"
+                binding:siRadius="12px" />
+
+            <LinearLayout
+                android:id="@+id/ll_two_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.github.siyamed.shapeimageview.RoundedImageView
+                    android:id="@+id/iv_two_image_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="340px"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_banner"
+                    binding:siBorderColor="#fff"
+                    binding:siBorderWidth="2px"
+                    binding:siRadius="12px" />
+
+                <View
+                    android:layout_width="16px"
+                    android:layout_height="match_parent" />
+
+                <com.github.siyamed.shapeimageview.RoundedImageView
+                    android:id="@+id/iv_two_image_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="340px"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_banner"
+                    binding:siBorderColor="#fff"
+                    binding:siBorderWidth="2px"
+                    binding:siRadius="12px" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_three_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:id="@+id/iv_three_image_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="340px"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/default_banner"
+                    binding:siShape="@drawable/bg_image_square_radius_left_top_bottom" />
+
+                <View
+                    android:layout_width="8px"
+                    android:layout_height="match_parent" />
+
+                <RelativeLayout
+                    android:layout_width="228px"
+                    android:layout_height="340px"
+                    android:orientation="vertical">
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/iv_three_image_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="165px"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/default_banner"
+                        binding:siShape="@drawable/bg_image_square_radius_right_top" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="165px"
+                        android:layout_alignParentBottom="true">
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/iv_three_image_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/default_banner"
+                            binding:siShape="@drawable/bg_image_square_radius_right_bottom" />
+
+                        <TextView
+                            android:id="@+id/tv_imageCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginRight="10px"
+                            android:layout_marginBottom="10px"
+                            android:background="@drawable/bg_box_25_222624"
+                            android:paddingLeft="18px"
+                            android:paddingTop="5px"
+                            android:paddingRight="18px"
+                            android:paddingBottom="5px"
+                            android:text="9图"
+                            android:textColor="#fff"
+                            android:textSize="20px" />
+                    </FrameLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="20px"
+            android:background="@color/color_eeeeee" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_readCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/ic_browse32"
+                        android:drawablePadding="12px"
+                        android:gravity="center"
+                        android:paddingTop="20px"
+                        android:paddingBottom="20px"
+                        android:text="299"
+                        android:textColor="@color/color_afb5b4"
+                        android:textSize="24px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30px"
+                        android:drawableLeft="@drawable/ic_comment"
+                        android:drawablePadding="12px"
+                        android:gravity="center"
+                        android:paddingTop="20px"
+                        android:paddingBottom="20px"
+                        android:text="147"
+                        android:textColor="@color/color_afb5b4"
+                        android:textSize="24px" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_collect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="20px"
+                    android:paddingBottom="20px">
+
+                    <ImageView
+                        android:id="@+id/iv_collect_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12px"
+                        android:src="@drawable/icon_shoucang" />
+
+                    <TextView
+                        android:id="@+id/tv_collectCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="@color/color_afb5b4"
+                        android:textSize="24px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_zan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="20px"
+                    android:paddingBottom="20px">
+
+                    <ImageView
+                        android:id="@+id/iv_zan_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12px"
+                        android:src="@drawable/ic_like_small_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_zanCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="@color/color_afb5b4"
+                        android:textSize="24px" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:background="@color/color_f6f9f8" />
+</LinearLayout>
+</layout>

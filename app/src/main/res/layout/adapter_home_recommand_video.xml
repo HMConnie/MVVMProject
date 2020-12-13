@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="26px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20px"
+        android:paddingRight="20px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="70px"
+                android:layout_height="70px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icon_information_profile"
+                app:siBorderAlpha="0"
+                app:siBorderColor="#fff"
+                app:siBorderWidth="2px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BenBen小编"
+                        android:textColor="#333333"
+                        android:textSize="26px"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4px"
+                        android:text="5分钟前"
+                        android:textColor="#b4b4b4"
+                        android:textSize="22px" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawableLeft="@drawable/btn_clear_blake48"
+                    android:drawablePadding="12px"
+                    android:gravity="bottom"
+                    android:paddingLeft="10px"
+                    android:paddingTop="10px"
+                    android:paddingBottom="10px"
+                    android:textColor="#b4b4b4"
+                    android:textSize="24px"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:ellipsize="end"
+            android:lineSpacingExtra="6px"
+            android:maxLines="2"
+            android:text="这里复古风爱好者的购物小世界，想买一些复古风的美到炸的装饰统统都有哦～"
+            android:textColor="#333333"
+            android:textSize="30px"
+            android:textStyle="bold" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16px">
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="340px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/default_banner"
+                app:siBorderColor="#fff"
+                app:siBorderWidth="2px"
+                app:siRadius="12px" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_playing" />
+
+            <TextView
+                android:id="@+id/tv_video_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="30px"
+                android:layout_marginBottom="30px"
+                android:text="3:30"
+                android:textColor="#fff"
+                android:textSize="28px" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="20px"
+            android:background="#eeeeee" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_readCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawableLeft="@drawable/ic_browse32"
+                        android:drawablePadding="12px"
+                        android:gravity="center"
+                        android:paddingTop="20px"
+                        android:paddingBottom="20px"
+                        android:text="299"
+                        android:textColor="#afb5b4"
+                        android:textSize="24px" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30px"
+                        android:drawableLeft="@drawable/ic_comment"
+                        android:drawablePadding="12px"
+                        android:gravity="center"
+                        android:paddingTop="20px"
+                        android:paddingBottom="20px"
+                        android:text="147"
+                        android:textColor="@color/color_afb5b4"
+                        android:textSize="24px" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_collect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="20px"
+                    android:paddingBottom="20px">
+
+                    <ImageView
+                        android:id="@+id/iv_collect_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12px"
+                        android:src="@drawable/icon_shoucang" />
+
+                    <TextView
+                        android:id="@+id/tv_collectCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="#afb5b4"
+                        android:textSize="24px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_zan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="20px"
+                    android:paddingBottom="20px">
+
+                    <ImageView
+                        android:id="@+id/iv_zan_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12px"
+                        android:src="@drawable/ic_like_small_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_zanCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50"
+                        android:textColor="#afb5b4"
+                        android:textSize="24px" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:background="#f6f9f8" />
+
+</LinearLayout>
+</layout>

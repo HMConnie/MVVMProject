@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId "com.sgcai.mvvmproject"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
+    }
+    dataBinding {
+        enabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation rootProject.ext.dependencies["MagicIndicator"]
+    implementation rootProject.ext.dependencies["tkrefreshlayout"]
+    implementation rootProject.ext.dependencies["android-shape-imageview"]
+
+
+
+    implementation project(":BaseLib")
+}

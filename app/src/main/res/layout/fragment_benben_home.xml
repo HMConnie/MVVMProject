@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sgcai.mvvmproject.ui.main.viewmodel.BenBenHomeViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_left_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                binding:onClickCommand="@{viewModel.searchClick}"
+                android:src="@mipmap/btn_search2" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_title_recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="0"
+                    android:text="推荐"
+                    android:textColor="#ff3c53"
+                    android:textSize="18sp"
+                    binding:onClickCommand="@{viewModel.tabRecommendClick}"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_title_follow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:tag="1"
+                    android:text="关注"
+                    binding:onClickCommand="@{viewModel.tabFollowClick}"
+                    android:textColor="#afc1bc"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_right_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                binding:onClickCommand="@{viewModel.guideClick}"
+                android:paddingRight="8dp"
+                android:src="@mipmap/btn_question" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f2f3f4" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <com.sgcai.mvvmproject.view.ViewPagerSlide
+                android:id="@+id/home_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:id="@+id/iv_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"
+                binding:onClickCommand="@{viewModel.signClick}"
+                android:src="@mipmap/btn_sign2" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

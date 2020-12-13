@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVVMProject</string>
+    <array name="arr_home_top">
+        <item>推荐</item>
+        <item>关注</item>
+    </array>
+</resources>

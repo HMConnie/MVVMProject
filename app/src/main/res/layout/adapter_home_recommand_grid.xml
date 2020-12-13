@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.sgcai.mvvmproject.ui.main.viewmodel.RecommendTabViewModel" />
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="20px">
+
+    <com.github.siyamed.shapeimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="320px"
+        android:layout_marginTop="20px"
+        android:layout_weight="1"
+        binding:url="@{viewModel.item.dynamicImage.get(0)}"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_image_big"
+        app:siArrowPosition="right"
+        app:siBorderAlpha="0.08"
+        app:siBorderColor="#000"
+        app:siBorderWidth="0.5dp"
+        app:siRadius="8dp" />
+
+    <View
+        android:id="@+id/v_right"
+        android:layout_width="20px"
+        android:layout_height="match_parent" />
+</LinearLayout>
+</layout>
